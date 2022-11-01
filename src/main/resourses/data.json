@@ -1,4 +1,38 @@
 {
     "set" : [],
-    "commodity": []
+    "commodity": [
+        {
+            "name": "Паллада Красная",
+            "id" : "co.000000",
+            "article": "00-000000",
+            "product": {
+                    "name": "21-N1-red",
+                    "id": "pr.000000",
+                    "weight": 350,
+                    "what_is_measured_in": "grand",
+                    "reserve": 5,
+                    "package": "pr.123456",
+                    "related_product": "pr.654321",
+                    "technical_photo": [
+                        {
+                           "name": "Паллада Красная вид сверху",
+                           "id": "ph.123456",
+                           "src": "image/tech/123456.png" 
+                        }
+                    ]
+
+            },
+            "adverting_history": {
+                "text": "Афина-Паллада была не только богиней мудрости, но и покровительнецей гончарного ремесла. Формы этой неглубокой тарелки напоминают глаза символа Афины - совы.",
+                "adveting_photo": [
+                    {
+                        "name": "Паллада Красная вид сверху",
+                        "id": "ph.123456",
+                        "src": "image/add/123456.png" 
+                     }
+                ]
+            }
+        }
+    ],
+    "unitsOfMeasuremet": ["grams", "litres", "grand"]
 }
