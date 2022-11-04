@@ -49,5 +49,13 @@
     <genClasses ecoreClass="gena.ecore#//CostPrice">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//CostPrice/value"/>
     </genClasses>
+    <genClasses ecoreClass="gena.ecore#//Set">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Set/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Set/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Set/product"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Set/price"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Set/technical"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Set/adverting_history"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
