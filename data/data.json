@@ -17,7 +17,7 @@
                         {
                            "name": "Паллада Красная вид сверху",
                            "id": "ph.123456",
-                           "src": "image/tech/123456.png" 
+                           "src": "image/technical/123456.png" 
                         }
                     ]
 
@@ -55,7 +55,7 @@
                         {
                            "name": "Сгущёное мороженое",
                            "id": "ph.234567",
-                           "src": "image/tech/234567.jpeg" 
+                           "src": "image/technical/234567.jpeg" 
                         }
                     ]
 

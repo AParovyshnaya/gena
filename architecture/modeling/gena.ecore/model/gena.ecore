@@ -17,7 +17,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Commodity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="product" lowerBound="1"
         eType="#//Product" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="adverting_history" eType="#//AdvertingHistory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ad" eType="#//Ad"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="article" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -34,9 +34,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AdvertingHistory">
+  <eClassifiers xsi:type="ecore:EClass" name="Ad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="adverting" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="photo" upperBound="-1"
         eType="#//Photo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Price">
@@ -46,5 +46,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CostPrice">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Set">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product" lowerBound="1"
+        upperBound="-1" eType="#//Product" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="price" lowerBound="1" eType="#//Price"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="technical" lowerBound="1"
+        upperBound="-1" eType="#//Photo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ad" upperBound="-1" eType="#//Ad"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
