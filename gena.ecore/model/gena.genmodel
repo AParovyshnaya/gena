@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/gena.ecore/src-gen" creationIcons="false" editDirectory="/gena.ecore.edit/src-gen"
+    editorDirectory="/gena.ecore.editor/src-gen" modelPluginID="gena.ecore" modelName="Gena"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>gena.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Gena" basePackage="gena.ecore" disposableProviderFactory="true"
+      ecorePackage="gena.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gena.ecore#//MeasurementUnit">
+      <genEnumLiterals ecoreEnumLiteral="gena.ecore#//MeasurementUnit/Gram"/>
+      <genEnumLiterals ecoreEnumLiteral="gena.ecore#//MeasurementUnit/Liter"/>
+      <genEnumLiterals ecoreEnumLiteral="gena.ecore#//MeasurementUnit/Piece"/>
+    </genEnums>
+    <genClasses ecoreClass="gena.ecore#//Product">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Product/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Product/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Product/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Product/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Product/reserve"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gena.ecore#//Product/package"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gena.ecore#//Product/related"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Product/technical"/>
+    </genClasses>
+    <genClasses ecoreClass="gena.ecore#//Commodity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Commodity/product"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gena.ecore#//Commodity/adverting_history"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Commodity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Commodity/article"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Commodity/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Commodity/price"/>
+    </genClasses>
+    <genClasses ecoreClass="gena.ecore#//Photo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Photo/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Photo/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Photo/src"/>
+    </genClasses>
+    <genClasses ecoreClass="gena.ecore#//AdvertingHistory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//AdvertingHistory/history"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gena.ecore#//AdvertingHistory/adverting"/>
+    </genClasses>
+    <genClasses ecoreClass="gena.ecore#//Price">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//Price/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gena.ecore#//Price/costprice"/>
+    </genClasses>
+    <genClasses ecoreClass="gena.ecore#//CostPrice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gena.ecore#//CostPrice/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
