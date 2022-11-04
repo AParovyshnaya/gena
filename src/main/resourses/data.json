@@ -1,0 +1,77 @@
+{
+    "set" : [],
+    "commodity": [
+        {
+            "name": "Паллада Красная",
+            "id" : "co.000000",
+            "article": "00-000000",
+            "product": {
+                    "name": "21-N1-red",
+                    "id": "pr.000000",
+                    "weight": 350,
+                    "what_is_measured_in": "grand",
+                    "reserve": 5,
+                    "package": "pr.123456",
+                    "related_product": "pr.654321",
+                    "technical_photo": [
+                        {
+                           "name": "Паллада Красная вид сверху",
+                           "id": "ph.123456",
+                           "src": "image/tech/123456.png" 
+                        }
+                    ]
+
+            },
+            "price": {
+                "value": 759,
+                "cost_price": {
+                    "value": 356
+                }
+            },
+            "adverting_history": {
+                "text": "Афина-Паллада была не только богиней мудрости, но и покровительнецей гончарного ремесла. Формы этой неглубокой тарелки напоминают глаза символа Афины - совы.",
+                "adveting_photo": [
+                    {
+                        "name": "Паллада Красная вид сверху",
+                        "id": "ph.123456",
+                        "src": "image/add/123456.png" 
+                     }
+                ]
+            }
+        },
+        {
+            "name": "Сгущёное мороженное",
+            "id" : "co.100000",
+            "article": "10-000000",
+            "product": {
+                    "name": "Сгущённое мороженное",
+                    "id": "pr.100000",
+                    "weight": 150,
+                    "what_is_measured_in": "gram",
+                    "reserve": 10,
+                    "package": "pr.234567",
+                    "related_product": "pr.765432",
+                    "technical_photo": [
+                        {
+                           "name": "Сгущёное мороженое",
+                           "id": "ph.234567",
+                           "src": "image/tech/234567.jpeg" 
+                        }
+                    ]
+
+            },
+            "price": {
+                "value": 301,
+                "cost_price": {
+                    "value": 202
+                }
+            },
+            "adverting_history": {
+                "text": "Натуральное мороженое из трёх ингредиентов: молока, сливок и сгущёнки восхитительно раскрывается на языке вкусом детства.",
+                "adveting_photo": [
+                ]
+            }
+        }
+    ],
+    "unitsOfMeasuremet": ["grams", "litres", "grand"]
+}
