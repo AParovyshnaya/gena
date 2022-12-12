@@ -10,14 +10,18 @@ def createSite():
     os.makedirs(path + "site/images")
     os.mkdir(path + "site/images/ad")
     os.mkdir(path + "site/images/tech")
+    os.mkdir(path + "site/pages")
+    os.mkdir(path + "site/pages/commodites")
 def createCommodites():
     with open(path + 'data.json', encoding="UTF-8") as file:
         data = json.load(file)        
         commodities = data.get('commodity')
         return commodities
 def genetateSite():
-    html = open(path + "site/index.html", "w")
+    index = open(path + "site/index.html", "w")
     for commodity in createCommodites():
+        id = commodity.get("id")
+        html = open(path + "site/pages/commodites/" + id[3:] + ".html", "w")
         html.write(f"<h1>{commodity.get('name')}</h1>")
         html.write(f"<p>{commodity.get('article')}</p>")
         price = commodity.get('price')
@@ -30,8 +34,8 @@ def genetateSite():
             html.write("<p>На складе есть этот товар</p>")
         story = commodity.get('adverting_story')    
         html.write(f"<p>{story.get('text')}</p>")
-        image(story, "adveting_photo", html)
-        image(product, "technical_photo", html)        
+        image(story, 'adveting_photo', html)
+        index.write(f"<div><a href={'pages/commodites/' + id[3:] + '.html'}><p><img src='{image(product, 'technical_photo', html)}' style='width: 300px'>{commodity.get('name')}</p></a></div>")      
 def copyImage(src, id, name, ad_or_tech, html):
     old_path = path + src
     if not os.path.exists(old_path):
@@ -42,10 +46,11 @@ def copyImage(src, id, name, ad_or_tech, html):
             print(f"Картинка по адресу {old_path} не соотвествует формату .png или .jpeg")
         else:
             new_path = "site/images/" + ad_or_tech + "/" + id[3:] + exstension
-            html.write(f"<img src='{new_path[5:]}' alt={name}>")
+            html.write(f"<img src='{'../../' + new_path[5:]}' alt={name} style='width: 700px'>")
             new_path = path + new_path
             site_image = open(new_path, "w")
             shutil.copyfile(old_path, new_path)
+            return "images/" + ad_or_tech + "/" + id[3:] + exstension
 def image(object, name, html):
     images = object.get(name)
     if type(images) != list:
@@ -58,7 +63,7 @@ def image(object, name, html):
         else:
             ad_or_tech = "ad"
         for image in images:
-            copyImage(image.get("src"), image.get("id"), image.get("name"), ad_or_tech, html)
+            return copyImage(image.get("src"), image.get("id"), image.get("name"), ad_or_tech, html)
         
 path = enter()
 #В виджетах
