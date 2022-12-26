@@ -10,6 +10,7 @@ def createSite():
     os.makedirs(path + "site/images")
     os.mkdir(path + "site/images/ad")
     os.mkdir(path + "site/images/tech")
+    os.mkdir(path + "site/images/site")
     os.mkdir(path + "site/pages")
     os.mkdir(path + "site/pages/commodites")
 def createCommodites():
@@ -17,11 +18,17 @@ def createCommodites():
         data = json.load(file)        
         commodities = data.get('commodity')
         return commodities
+def createFile(adress, write):
+    index = open(path + adress, "w", encoding="UTF-8")
+    index.write(write)
+    return index
 def genetateSite():
-    index = open(path + "site/index.html", "w")
+    index = createFile("site/index.html", "<!DOCTYPE html><html><head><title>gena</title><meta charset='utf-8'><meta name='viewport' content='width=device-width', initial-scale=1, shrink-to-fit='no'><link rel='stylesheet' href='main.css'></link></head><body><div>Это Gena</div><div id='body' style='background-color: #FFFFFF'>")
+    css = createFile("site/main.css", "@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');body{background: url('images/site/phone.jpg') repeat;line-height: 1.6;font-size: 16px;font-weight: 300;}, #body{background: #FFFFFF;}")
+    copyImage("images/site/phone.jpg", "phone", "phone", "site")
     for commodity in createCommodites():
         id = commodity.get("id")
-        html = open(path + "site/pages/commodites/" + id[3:] + ".html", "w")
+        html = createFile("site/pages/commodites/" + id[3:] + ".html", f"<!DOCTYPE html><html><head><title>{commodity.get('name')}</title><meta charset='utf-8'></head><body>")
         html.write(f"<h1>{commodity.get('name')}</h1>")
         html.write(f"<p>{commodity.get('article')}</p>")
         price = commodity.get('price')
@@ -36,21 +43,28 @@ def genetateSite():
         html.write(f"<p>{story.get('text')}</p>")
         image(story, 'adveting_photo', html)
         index.write(f"<div><a href={'pages/commodites/' + id[3:] + '.html'}><p><img src='{image(product, 'technical_photo', html)}' style='width: 300px'>{commodity.get('name')}</p></a></div>")      
-def copyImage(src, id, name, ad_or_tech, html):
+        html.write("</body></html>")
+    index.write("</div></body></html>")
+def copyImage(src, id, alt, directory, html = '', cut = False):
     old_path = path + src
     if not os.path.exists(old_path):
             print(f"Картинки по адресу {old_path} нет")
     else:
         exstension = os.path.splitext(old_path)[1]
-        if exstension != ".jpeg" and exstension != ".png":
-            print(f"Картинка по адресу {old_path} не соотвествует формату .png или .jpeg")
+        if exstension != ".jpeg" and exstension != ".png" and exstension != ".jpg":
+            print(f"Картинка по адресу {old_path} не соотвествует формату .png, .jpeg или .jpg")
         else:
-            new_path = "site/images/" + ad_or_tech + "/" + id[3:] + exstension
-            html.write(f"<img src='{'../../' + new_path[5:]}' alt={name} style='width: 700px'>")
+            if cut:
+                name = id[3:]
+            else:
+                name = id
+            new_path = "site/images/" + directory + "/" + name + exstension
+            if html != '':
+                html.write(f"<img src='{'../../' + new_path[5:]}' alt='{alt}' style='width: 700px'>")
             new_path = path + new_path
             site_image = open(new_path, "w")
             shutil.copyfile(old_path, new_path)
-            return "images/" + ad_or_tech + "/" + id[3:] + exstension
+            return "images/" + directory + "/" + name + exstension
 def image(object, name, html):
     images = object.get(name)
     if type(images) != list:
@@ -63,7 +77,7 @@ def image(object, name, html):
         else:
             ad_or_tech = "ad"
         for image in images:
-            return copyImage(image.get("src"), image.get("id"), image.get("name"), ad_or_tech, html)
+            return copyImage(image.get("src"), image.get("id"), image.get("name"), ad_or_tech, html, True)
         
 path = enter()
 #В виджетах
@@ -78,7 +92,9 @@ elif not os.path.exists(path + 'images'):
 elif not os.path.exists(path + 'images/ad'):
     print(f"Папки по пути {path + 'images/ad'} не существует")
 elif not os.path.exists(path + 'images/tech'):
-    print(f"Папки по пути {path + 'images/tech'} не существует")    
+    print(f"Папки по пути {path + 'images/tech'} не существует")
+elif not os.path.exists(path + 'images/site'):
+    print(f"Папки по пути {path + 'images/site'} не существует")   
 elif os.path.splitext(path + 'data.json')[1] != '.json':
     print("Расширение этого файла не .json")
 elif os.path.exists(path + "site"):
