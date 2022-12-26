@@ -7,6 +7,7 @@ def enter():
     return path
 def createSite():
     os.mkdir(path + "site")
+    os.makedirs(path + "site/css")
     os.makedirs(path + "site/images")
     os.mkdir(path + "site/images/ad")
     os.mkdir(path + "site/images/tech")
@@ -18,14 +19,21 @@ def createCommodites():
         data = json.load(file)        
         commodities = data.get('commodity')
         return commodities
-def createFile(adress, write):
-    index = open(path + adress, "w", encoding="UTF-8")
-    index.write(write)
-    return index
+def createFile(adress, write='', old_adress='', our=False):
+    new_path = path + adress
+    file = open(new_path, "w", encoding="UTF-8")
+    if our:
+        old_path = os.getcwd().replace("\\", "/") + "/" + old_adress
+        file = open(new_path, "w", encoding="UTF-8")
+        shutil.copyfile(old_path, new_path)
+    file.write(write)
+    return file
 def genetateSite():
-    index = createFile("site/index.html", "<!DOCTYPE html><html><head><title>gena</title><meta charset='utf-8'><meta name='viewport' content='width=device-width', initial-scale=1, shrink-to-fit='no'><link rel='stylesheet' href='main.css'></link></head><body><div>Это Gena</div><div id='body' style='background-color: #FFFFFF'>")
-    css = createFile("site/main.css", "@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');body{background: url('images/site/phone.jpg') repeat;line-height: 1.6;font-size: 16px;font-weight: 300;}, #body{background: #FFFFFF;}")
+    index = createFile("site/index.html", "<!DOCTYPE html><html><head><title>gena</title><meta charset='utf-8'><meta name='viewport' content='width=device-width', initial-scale=1, shrink-to-fit='no'><link rel='stylesheet' href='css/main.css'></link><link rel='stylesheet' href='css/bootstrap.min.css'></link></head><body><div class='header'><div>Это Gena</div><div><img src='images/site/icon.png'></div></div><div id='body'>")
+    css = createFile("site/css/main.css", old_adress="files/css/main.css", our = True)
+    bootsrap = createFile("site/css/bootstrap.min.css", old_adress="files/css/bootstrap.min.css", our = True)
     copyImage("images/site/phone.jpg", "phone", "phone", "site")
+    copyImage("images/site/icon_64.png", "icon", "icon", "site")
     for commodity in createCommodites():
         id = commodity.get("id")
         html = createFile("site/pages/commodites/" + id[3:] + ".html", f"<!DOCTYPE html><html><head><title>{commodity.get('name')}</title><meta charset='utf-8'></head><body>")
