@@ -2,7 +2,8 @@ import json
 import os
 import shutil
 def enter():
-    path = input("Абсолютный путь к папке с data.json и папкой images, содержащей папки ad и tech в корне (записывайте с '/'): ")
+    path = input("Абсолютный путь к папке с data.json и папкой images, содержащей папки ad и tech в корне : ").replace('\\', '/')
+    print(path)
     path += "/"
     return path
 def createSite():
@@ -36,7 +37,7 @@ def genetateSite():
     copyImage("images/site/icon_64.png", "icon", "icon", "site")
     for commodity in createCommodites():
         id = commodity.get("id")
-        html = createFile("site/pages/commodites/" + id[3:] + ".html", f"<!DOCTYPE html><html><head><title>{commodity.get('name')}</title><meta charset='utf-8'></head><body>")
+        html = createFile("site/pages/commodites/" + id[3:] + ".html", f"<!DOCTYPE html><html><head><title>{commodity.get('name')}</title><link rel='stylesheet' href='css/main.css'><meta charset='utf-8'></link><link rel='stylesheet' href='css/bootstrap.min.css'></link></head><body>")
         html.write(f"<h1>{commodity.get('name')}</h1>")
         html.write(f"<p>{commodity.get('article')}</p>")
         price = commodity.get('price')
