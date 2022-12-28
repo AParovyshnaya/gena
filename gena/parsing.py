@@ -43,7 +43,7 @@ def genetateSite():
         html.write(div(commodity.get('name'), center=True))
         html.write(div(commodity.get('article')))
         price = commodity.get('price')
-        html.write(div(price.get('value')))
+        html.write(div(price.get('value'), class_div='price'))
         product = commodity.get('product')
         html.write(div(product.get('weight')))
         if product.get('reserve') == 0:
@@ -89,11 +89,11 @@ def image(object, name, html):
             ad_or_tech = "ad"
         for image in images:
             return copyImage(image.get("src"), image.get("id"), image.get("name"), ad_or_tech, html, True)
-def div(content, center = False):
+def div(content, center = False, class_div=''):
     if center:
         return f"<div class='container text-center'><div class='row justify-content-md-center'><div class='col'>{content}</div></div></div>"        
     else:
-        return f"<div class='container'><div class='row'><div class='col'>{content}</div></div></div>"
+        return f"<div class='container'><div class='row'><div class='col {class_div}'>{content}</div></div></div>"
 path = enter()
 #В виджетах
 # темы - новогодняя и обычнаяE:/work/gena/git/gena/data
