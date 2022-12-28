@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+body.body {
+	background: url('../images/site/phone.jpg') repeat;
+	line-height: 1.6;
+	font-size: 16px;
+	font-weight: 300;
+	color: #02060f;
+}
+body.commodites {
+	background: url('../../../images/site/phone.jpg') repeat;
+}
+a.a {
+	color: #02060f;
+}
+a.a:hover {
+	color: #AC202D;
+	text-decoration: none;
+}
+div.body {
+	background: #FFFFFF;
+}
+.header {
+	font-size: 50px;
+}
+.price {
+	font-size: 30px;
+}
