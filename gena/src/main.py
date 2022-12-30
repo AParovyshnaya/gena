@@ -1,3 +1,3 @@
 from Gena import Gena
 
-Gena('a', 'b').generate()
+Gena(input("Папка, в которой лежит data.json: "), input("Папка, в которой будет сайт: ")).generate()
