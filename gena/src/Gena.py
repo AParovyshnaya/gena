@@ -5,12 +5,13 @@ from Site import Site
 class Gena():
     
     def __init__(self, input, output):
+        
         self.input = input.replace('\\', '/') + "/"
         self.output = output.replace('\\', '/') + "/"
     
     def generate(self):
-        if not Mistackes(self.input, self.output).get():
-            Data(self.input).get()
-            Site(self.output).deploy()
+        
+        if not Mistakes(self.input, self.output).get():
+            Site(self.input, self.output, Data(self.input).get()).deploy()
             print(f"from {self.input} to {self.output}")
         
