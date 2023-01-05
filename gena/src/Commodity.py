@@ -61,8 +61,8 @@ class Commodity():
             
             div(image)
         
-        Appendix(os.getcwd().replace("\\", "/")[:-3:] + 'files/css/bootstrap.min.css', self.output + "site/pages/commodites/css/bootstrap.min.css").copy()
-        Appendix(os.getcwd().replace("\\", "/")[:-3:] + 'files/css/main.css', self.output + "site/pages/commodites/css/main.css").copy()
+        Appendix(os.getcwd().replace("\\", "/")[:os.getcwd().replace("\\", "/").rindex("/") + 1:] + 'files/css/bootstrap.min.css', self.output + "site/pages/commodites/css/bootstrap.min.css").copy()
+        Appendix(os.getcwd().replace("\\", "/")[:os.getcwd().replace("\\", "/").rindex("/") + 1:] + 'files/css/main.css', self.output + "site/pages/commodites/css/main.css").copy()
         
         page.write("</div></body></html>")
         return f"<div class='col-6'><a class='a' href={'pages/commodites/' + self.id + '.html'}><div class='col-4'><img src='{'images/tech' + self.image}' style='width: 300px'></div><div class='col-2'>{self.name}</div></a></div>"
