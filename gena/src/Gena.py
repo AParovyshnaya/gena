@@ -5,9 +5,9 @@ from Site import Site
 class Gena():
     
     def __init__(self, input, output):
-        
-        self.input = input.replace('\\', '/') + "/"
-        self.output = output.replace('\\', '/') + "/"
+        # replace('\\', '/')
+        self.input = input[:input.rfind('/'):] + "/"
+        self.output = output + "/"
     
     def generate(self):
         
