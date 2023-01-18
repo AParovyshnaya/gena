@@ -1,3 +1,4 @@
 from Gena import Gena
+from Interface import Interface
 
-Gena(input("Папка, в которой лежит data.json: "), input("Папка, в которой будет сайт: ")).generate()
+Interface().deploy()
