@@ -1,12 +1,7 @@
 {
     "set": [],
     "commodity": [{
-            "name": {
-                "name": "Имя",
-                "value": "Паллада красная",
-                "visible": true,
-                "visible_key": false
-            },
+            "name": "Паллада красная",
             "id": {
                 "name": "ID",
                 "value": "pr.000000",
@@ -75,12 +70,7 @@
         },
 
         {
-            "name": {
-                "name": "Имя",
-                "value": "Сгущёное мороженое",
-                "visible": true,
-                "visible_key": false
-            },
+            "name": "Сгущёное мороженое",
             "id": {
                 "name": "ID",
                 "value": "co.100000",
