@@ -1,75 +1,146 @@
 {
-    "set" : [],
-    "commodity": [
-        {
-            "name": "Паллада Красная",
-            "id" : "co.000000",
-            "article": "00-000000",
+    "set": [],
+    "commodity": [{
+            "name": {
+                "name": "Имя",
+                "value": "Паллада красная",
+                "visible": true,
+                "visible_key": false
+            },
+            "id": {
+                "name": "ID",
+                "value": "pr.000000",
+                "visible": false
+            },
+            "article": {
+                "name": "Артикул",
+                "value": "00-000000",
+                "visible": true,
+                "visible_key": true
+            },
             "product": {
-                    "name": "21-N1-red",
-                    "id": "pr.000000",
-                    "weight": 350,
-                    "unit_of_measurement": "grand",
-                    "reserve": 5,    
-                    "package": "pr.123456",
-                    "related_product": "pr.654321",
-                    "technical_photo": [
-                        {
-                           "name": "Паллада Красная вид сверху",
-                           "id": "ph.123456",
-                           "src": "images/tech/123456.png" 
-                        }
-                    ]
+                "name": {
+                    "name": "Имя",
+                    "value": "21-N1-red",
+                    "visible": false
+                },
+                "id": {
+                    "name": "ID",
+                    "value": "pr.000000",
+                    "visible": false
+                },
+                "weight": {
+                    "name": "Вес",
+                    "value": "350 грамм",
+                    "visible": true,
+                    "visible_key": true
+                },
+                "reserve": {
+                    "name": "Запас на складе",
+                    "value": "5 штук",
+                    "visible": true,
+                    "visible_key": true
+                },
+                "package": {
+                    "name": "Упаковка",
+                    "value": "pr.123456",
+                    "visible": false
+                },
+                "related_product": {
+                    "name": "Похожий товар",
+                    "value": "pr.654321",
+                    "visible": false
+                },
+                "technical_photo": [{
+                    "name": "Паллада Красная вид сверху",
+                    "id": "ph.123456",
+                    "src": "images/tech/123456.png"
+                }]
 
             },
             "price": {
-                "value": 759,
-                "cost_price": {
-                    "value": 356
-                }
+                "name": "Цена",
+                "value": "759 рублей",
+                "visible": true,
+                "visible_key": false
             },
             "adverting_story": {
                 "text": "Афина-Паллада была не только богиней мудрости, но и покровительнецей гончарного ремесла. Формы этой неглубокой тарелки напоминают глаза символа Афины - совы.",
-                "adveting_photo": [
-                    {
-                        "name": "Паллада Красная вид сверху",
-                        "id": "ph.123456",
-                        "src": "images/ad/123456.png" 
-                     }
-                ]
+                "adveting_photo": [{
+                    "name": "Паллада Красная вид сверху",
+                    "id": "ph.123456",
+                    "src": "images/ad/123456.png"
+                }]
             }
         },
+
         {
-            "name": "Сгущёное мороженное",
-            "id" : "co.100000",
-            "article": "10-000000",
+            "name": {
+                "name": "Имя",
+                "value": "Сгущёное мороженое",
+                "visible": true,
+                "visible_key": false
+            },
+            "id": {
+                "name": "ID",
+                "value": "co.100000",
+                "visible": false
+            },
+            "article": {
+                "name": "Артикул",
+                "value": "10-000000",
+                "visible": true,
+                "visible_key": true
+            },
             "product": {
-                    "name": "Сгущённое мороженное",
-                    "id": "pr.100000",
-                    "weight": 150,
-                    "unit_of_measurement": "gram",
-                    "reserve": 10,
-                    "package": "pr.234567",
-                    "related_product": "pr.765432",
-                    "technical_photo": [
-                        {
-                           "name": "Сгущёное мороженое",
-                           "id": "ph.234567",
-                           "src": "images/tech/234567.jpeg" 
-                        }
-                    ]
+                "name": {
+                    "name": "Имя",
+                    "value": "Сгущённое мороженое",
+                    "visible": false
+                },
+                "id": {
+                    "name": "ID",
+                    "value": "pr.100000",
+                    "visible": false
+                },
+                "weight": {
+                    "name": "Размер порции",
+                    "value": "150 грамм",
+                    "visible": true,
+                    "visible_key": true
+                },
+                "reserve": {
+                    "name": "Запас на складе",
+                    "value": "10 порций",
+                    "visible": true,
+                    "visible_key": true
+                },
+                "package": {
+                    "name": "Упаковка",
+                    "value": "pr.334567",
+                    "visible": false
+                },
+                "related_product": {
+                    "name": "Похожий товар",
+                    "value": "pr.134444",
+                    "visible": false
+                },
+                "technical_photo": [{
+                    "name": "Сгущёное мороженое",
+                    "id": "ph.234567",
+                    "src": "images/tech/234567.jpeg"
+                }]
 
             },
             "price": {
-                "value": 301,
-                "cost_price": {
-                    "value": 202
-                }
+                "name": "Цена",
+                "value": "276 рублей",
+                "visible": true,
+                "visible_key": false
             },
             "adverting_story": {
                 "text": "Натуральное мороженое из трёх ингредиентов: молока, сливок и сгущёнки восхитительно раскрывается на языке вкусом детства.",
-                "adveting_photo": [
-                ]
+                "adveting_photo": []
             }
         }
     ],
