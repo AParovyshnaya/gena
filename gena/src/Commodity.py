@@ -11,17 +11,19 @@ class Commodity():
         self.input = input
         self.output = output
         self.commodity = commodity
+        self.id = self.commodity["id"]['value'][3:]
         
     def deploy(self):
         page = File(self.output + "site/pages/commodites/" + self.id + '.html').deploy()
-        content, link = self.search(self.commodity)
+        content = self.search(self.commodity)
         Appendix(os.getcwd().replace("\\", "/")[:os.getcwd().replace("\\", "/").rindex("/") + 1:] + 'src/files/css/bootstrap.min.css', self.output + "site/pages/commodites/css/bootstrap.min.css").copy()
         Appendix(os.getcwd().replace("\\", "/")[:os.getcwd().replace("\\", "/").rindex("/") + 1:] + 'src/files/css/main.css', self.output + "site/pages/commodites/css/main.css").copy()
         page.write(content + "</div></body></html>")
-        return f"<div class='col-6'><a class='a' href={'pages/commodites/' + self.commodity['id']['value'][3:] + '.html'}><div class='col-4'><img src='{'images/tech' + self.commodity['product']['technical_photo'][0]['src'][self.technical_photo[0]['src'].rindex('/')::]}' style='width: 300px'></div><div class='col-2'>{self.commodity['name']}</div></a></div>"
+        return f"<div class='col-6'><a class='a' href={'pages/commodites/' + self.id + '.html'}><div class='col-4'><img src='{'images/tech' + self.commodity['product']['technical_photo'][0]['src'][self.commodity['product']['technical_photo'][0]['src'].rindex('/')::]}' style='width: 300px'></div><div class='col-2'>{self.commodity['name']}</div></a></div>"
     
     def check_key(self, key, base):
         if key == 'name':
+            print('hello')
             return False, self.start(key)
         if key == 'product':
             return False, self.search(base[key])
@@ -30,10 +32,10 @@ class Commodity():
         elif key == 'technical_photo':
             return False, self.images(base[key])
         else:
-            return True
+            return True, ''
     
     def start(self, name):
-        return(f"<!DOCTYPE html><html><head><title>{name}</title><link rel='stylesheet' href='css/main.css'><meta charset='utf-8'></link><link rel='stylesheet' href='css/bootstrap.min.css'></link></head><body class='commodites body'><div class='header container text-center'><div class='row justify-content-md-center'><div class='col-md-auto'><a class='a' href='../../index.html'>Это Gena</a></div><div class='col-md-auto'><a class='a' href='../../index.html'><img src='../../images/site/icon.png'></a></div></div></a></div><div class='body container'><div class='container'><div class='row justify-content-md-center'><div class='col>{name}</div></div></div>")
+        return(f"<!DOCTYPE html><html><head><title>{self.commodity['name']}</title><link rel='stylesheet' href='css/main.css'><meta charset='utf-8'></link><link rel='stylesheet' href='css/bootstrap.min.css'></link></head><body class='commodites body'><div class='header container text-center'><div class='row justify-content-md-center'><div class='col-md-auto'><a class='a' href='../../index.html'>Это Gena</a></div><div class='col-md-auto'><a class='a' href='../../index.html'><img src='../../images/site/icon.png'></a></div></div></a></div><div class='body container'><div class='container'><div class='row justify-content-md-center'><div class='col'>{self.commodity['name']}</div></div></div>")
     
     def story(self, base):
         content = "<div class='container'><div class='row'><div class='col>" + base['text'] + "</div></div></div>"
@@ -46,12 +48,13 @@ class Commodity():
         return content
         
     def generate(self, base, standart = True):
-        content = "<div class='container'><div class='row'><div class='col>"
+        content = "<div class='container'><div class='row'><div class='col'>"
         if standart:
             if base['visible']:
-                inside = base['value']
-                if base['visible_header']:
-                    inside += base['name']
+                inside = ''
+                if base['visible_key']:
+                    inside += base['name'] + ': '
+                inside += base['value']
                 content += inside
         else:
             content += base

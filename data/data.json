@@ -13,8 +13,14 @@
                 "visible": true,
                 "visible_key": true
             },
+            "price": {
+                "name": "Цена",
+                "value": "759 рублей",
+                "visible": true,
+                "visible_key": false
+            },
             "product": {
-                "name": {
+                "product_name": {
                     "name": "Имя",
                     "value": "21-N1-red",
                     "visible": false
@@ -53,15 +59,9 @@
                 }]
 
             },
-            "price": {
-                "name": "Цена",
-                "value": "759 рублей",
-                "visible": true,
-                "visible_key": false
-            },
             "adverting_story": {
                 "text": "Афина-Паллада была не только богиней мудрости, но и покровительнецей гончарного ремесла. Формы этой неглубокой тарелки напоминают глаза символа Афины - совы.",
-                "adveting_photo": [{
+                "adverting_photo": [{
                     "name": "Паллада Красная вид сверху",
                     "id": "ph.123456",
                     "src": "images/ad/123456.png"
@@ -82,8 +82,14 @@
                 "visible": true,
                 "visible_key": true
             },
+            "price": {
+                "name": "Цена",
+                "value": "276 рублей",
+                "visible": true,
+                "visible_key": false
+            },
             "product": {
-                "name": {
+                "product_name": {
                     "name": "Имя",
                     "value": "Сгущённое мороженое",
                     "visible": false
@@ -122,15 +128,9 @@
                 }]
 
             },
-            "price": {
-                "name": "Цена",
-                "value": "276 рублей",
-                "visible": true,
-                "visible_key": false
-            },
             "adverting_story": {
                 "text": "Натуральное мороженое из трёх ингредиентов: молока, сливок и сгущёнки восхитительно раскрывается на языке вкусом детства.",
-                "adveting_photo": []
+                "adverting_photo": []
             }
         }
     ],
