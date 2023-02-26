@@ -21,6 +21,7 @@ class Commodity():
         page.write(content + "</div></body></html>")
         return f"<div class='col-6'><a class='a' href={'pages/commodites/' + self.id + '.html'}><div class='col-4'><img src='{'images/tech' + self.commodity['product']['technical_photo'][0]['src'][self.commodity['product']['technical_photo'][0]['src'].rindex('/')::]}' style='width: 300px'></div><div class='col-2'>{self.commodity['name']}</div></a></div>"
     
+    
     def check_key(self, key, base):
         if key == 'name':
             print('hello')
