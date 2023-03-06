@@ -5,7 +5,6 @@ from Site import Site
 class Gena():
     
     def __init__(self, input, output):
-        # replace('\\', '/')
         self.input = input[:input.rfind('/'):] + "/"
         self.output = output + "/"
     

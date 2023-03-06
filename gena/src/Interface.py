@@ -5,7 +5,6 @@ from Trigger import Trigger
 from ctypes import windll
 from Check_image import Image
 class Interface(): 
-     
      def __init__(self):
          pass
      
@@ -26,5 +25,4 @@ class Interface():
          data.deploy()
          Trigger(window, 4, data, target).deploy()
          window.mainloop()
-         print(input, output)
          return input, output
