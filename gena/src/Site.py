@@ -3,13 +3,11 @@ from Commodity import Commodity
 from Index import Index
 
 class Site():
-    
-    def __init__(self, input, output, data):
-        
+    def __init__(self, input, output, data): 
         self.input = input
         self.output = output
         self.data = data
-        
+
     def deploy(self):
         Folders(self.output).deploy()
         index = Index(self.input, self.output).deploy()

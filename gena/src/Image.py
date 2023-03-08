@@ -3,7 +3,6 @@ from Appendix import Appendix
 class Image():
     
     def __init__(self, input, output, data = {'name': '', 'src': ''}):
-        
         self.input = input
         self.output = output
         self.data = data
@@ -16,7 +15,6 @@ class Image():
             self.exstension = '.png'
     
     def deploy(self):
-        
         Appendix(self.input + self.src, self.output + self.src).copy()
         
         if self.exstension != '.jpeg' and self.exstension != '.jpg' and self.exstension != '.png':
