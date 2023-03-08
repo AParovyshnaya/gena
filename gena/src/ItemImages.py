@@ -1,7 +1,7 @@
 from Images import Images
-from Standart_Item import Standart_Item
+from StandardItem import StandardItem
 
-class Item_Images():
+class ItemImages():
     
     def __init__(self, input, output, base):
         self.input = input
@@ -9,9 +9,9 @@ class Item_Images():
         self.base = base
         self.content = ''
     
-    def content(self):
+    def con(self):
         for image in Images(self.base, self.input, self.output + 'site/').deploy():
-            content += Standart_Item(image, standart = False).content()
-        return content
+            self.content += StandardItem(image, standart = False).con()
+        return self.content
     
         

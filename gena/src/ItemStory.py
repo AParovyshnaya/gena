@@ -1,6 +1,6 @@
-from Item_Images import Item_Images
+from ItemImages import ItemImages
 
-class Item_Story():
+class ItemStory():
     
     def __init__(self, input, output, base):
         self.input = input
@@ -8,5 +8,5 @@ class Item_Story():
         self.base = base
         self.content = "<div class='container'><div class='row'><div class='col>" + self.base['text'] + "</div></div></div>"
     
-    def content(self):
-        return content + Item_Images(self.input, self.output, self.base['adverting_photo'])
+    def con(self):
+        return self.content + ItemImages(self.input, self.output, self.base['adverting_photo']).con()
