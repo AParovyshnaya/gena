@@ -10,3 +10,4 @@ class ItemStory():
     
     def con(self):
         return self.content + ItemImages(self.input, self.output, self.base['adverting_photo']).con()
+    

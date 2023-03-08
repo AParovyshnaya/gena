@@ -26,3 +26,4 @@ class Interface():
          Trigger(window, 4, data, target).deploy()
          window.mainloop()
          return input, output
+     

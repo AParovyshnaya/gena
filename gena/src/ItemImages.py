@@ -14,4 +14,3 @@ class ItemImages():
             self.content += StandardItem(image, standart = False).con()
         return self.content
     
-        

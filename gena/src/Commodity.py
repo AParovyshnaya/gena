@@ -18,3 +18,4 @@ class Commodity():
         Appendix(os.getcwd().replace("\\", "/")[:os.getcwd().replace("\\", "/").rindex("/") + 1:] + 'src/files/css/main.css', self.output + "site/pages/commodites/css/main.css").copy()
         page.write(Content(self.input, self.output).get_content(self.commodity) + "</div></body></html>")
         return f"<div class='col-6'><a class='a' href={'pages/commodites/' + self.id + '.html'}><div class='col-4'><img src='{'images/tech' + self.commodity['product']['technical_photo'][0]['src'][self.commodity['product']['technical_photo'][0]['src'].rindex('/')::]}' style='width: 300px'></div><div class='col-2'>{self.commodity['name']}</div></a></div>"
+    

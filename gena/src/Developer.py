@@ -7,3 +7,4 @@ class Developer():
     def start(self):
         print("start")
         Gena("E:/work/gena/git/gena/data/data.json", "E:/work/gena/git/gena/data/").generate()
+        
